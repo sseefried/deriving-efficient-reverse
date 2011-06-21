@@ -40,7 +40,7 @@ Proof:
 ==    {- (x:xs) case of reverse -}
     cont (reverse (x:xs))
 
-Observation. Every continuation is of form for 'revC xs id'
+Observation. Every continuation is of follow form (for 'revC xs id'): 
 
   \zs -> zs ++ ys (for some ys)
 
