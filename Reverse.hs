@@ -3,10 +3,17 @@ module Reverse where
 
 import Prelude hiding (reverse)
 
+--
+-- This defintion of reverse has quadratic complexity.
+-- 
 reverse [] = []
 reverse (x:xs) = reverse xs ++ [x]
 
+-- 
+-- Let's change it to "continuation passing style"
+--
 -- reverse with a continuation
+--
 revC :: [a] -> ([a] -> [a]) -> [a]
 revC []     cont = cont []
 revC (x:xs) cont = revC xs (\ys -> cont (ys ++ [x]))
@@ -118,7 +125,9 @@ Case []
 ==   {- [] case of (++) -}
    ys
 
-Therefore:
+Therefore we get the O(n) complexity definition:
 -}
 rev     [] ys = ys
 rev (x:xs) ys = rev xs (x:ys)
+
+
