@@ -85,7 +85,8 @@ We can now equivalently say:
 
 Proof:
 
-  revC xs id == reverse xs ++ ys == rev xs []
+  rev xs []  == reverse xs ++ [] == reverse xs
+  revC xs id == id (reverse xs)  == reverse xs 
 
 Now let's see where this new specification takes us:
 
