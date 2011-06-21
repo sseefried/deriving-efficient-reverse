@@ -40,16 +40,17 @@ Proof:
 ==    {- (x:xs) case of reverse -}
     cont (reverse (x:xs))
 
-Observation. Every continuation is of follow form (for 'revC xs id'): 
+Observation. Every continuation is of the following form (for 'revC xs id'): 
 
-  \zs -> zs ++ ys (for some ys)
+  \zs -> zs ++ ys       (for some ys)
 
 Proof.
 -----
 Base case:
 
  revC is initially called with id == \zs -> zs
-  id == \zs -> zs == \zs -> zs ++ []
+
+ id == \zs -> zs == \zs -> zs ++ []      
 
 Inductive case:
 
